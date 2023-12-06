@@ -1,10 +1,16 @@
 # Read the Plantower PMSX003 Sensor
 
+Read the Plantower Particulate Matter (PM1, PM2.5, PM10) sensor with Python, source code is this repository: https://github.com/printfinn/PMSX003
+
 ## Tested Sensor
 
 - PMSA003
 
-Should also work with other Plantower like PMS5003, PMS7003 etc.
+Should also work with other Plantower Particulate Matter like PMS5003, PMS7003 etc.
+
+## Dependency
+
+This project depends on [pyserial](https://pypi.org/project/pyserial/).
 
 ## API
 
@@ -32,6 +38,11 @@ PM1: 3, PM2.5: 10, PM10: 12.
 
 ```bash
 python3 pmsx003.py /dev/ttyAMA0 # use you own serial port here
+
+# Waking up, going passive...
+# Sleeping for 30 seconds to measure...
+# PM1: 4, PM2.5: 10, PM10: 12.
+# Going to sleep.
 ```
 
 
@@ -64,3 +75,7 @@ But if you don't want the fan to rotate indefinitely, you should:
 4. Query once.
 5. Read once -> this is the data we want.
 6. Go sleep, get a success response (8 bytes).
+
+## License
+
+MIT
